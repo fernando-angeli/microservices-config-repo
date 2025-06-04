@@ -2,11 +2,10 @@ spring:
   datasource:
     url: jdbc:h2:mem:clients-db
     driver-class-name: org.h2.Driver
-    username: ss
+    username: sa
     password:
     hikari:
         maximum-pool-size: 5
-
     h2:
         console:
             enabled: true
@@ -15,7 +14,7 @@ spring:
     jpa:
       hibernate:
         ddl-auto: update
-      show-sql: true
+      show-sql: false
       properties:
         hibernate:
           format_sql: true
@@ -32,4 +31,4 @@ spring:
       register-with-eureka: true
       fetch-registry: true
       service-url:
-        defaultZone: http://localhost:8671/eureka
+        defaultZone: http://eureka-server:8761/eureka
